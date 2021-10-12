@@ -139,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="computer.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="motherboard.cpp" />
+    <ClCompile Include="processor.cpp" />
+    <ClCompile Include="ram.cpp" />
+    <ClCompile Include="videocard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="computer.h" />
+    <ClInclude Include="motherboard.h" />
+    <ClInclude Include="processor.h" />
+    <ClInclude Include="ram.h" />
+    <ClInclude Include="videocard.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
