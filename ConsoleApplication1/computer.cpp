@@ -12,12 +12,12 @@ computer init_computer(motherboard mb, processor p, ram r, videocard v, string n
 }
 
 void turn_on_computer(computer *comp) {  //включить компьютер
-	if (!comp->state) { comp->state = 1; cout << "Компьютер включен" << endl; }
-	else cout << "Компьютер уже включен" << endl;
+	if (!comp->state) { comp->state = 1; cout << "Компьютер включен: " << comp->name << endl; }
+	else cout << "Компьютер уже включен: " << comp->name << endl;
 }
 
 void turn_off_computer(computer *comp) {  //выключить компьютер
-	if (comp->state) { comp->state = 0; cout << "Компьютер выключен" << endl; }
+	if (comp->state) { comp->state = 0; cout << "Компьютер выключен: " << comp->name << endl; }
 }
 
 void check_computer(computer comp) {  //проверить и вывести состовляющие компьютера на экран
@@ -32,6 +32,7 @@ void check_computer(computer comp) {  //проверить и вывести состовляющие компьют
 		else cout << "Оперативная память отсутствует" << endl;
 		if (check_videocard(comp.videocard)) print_videocard(comp.videocard);
 		else cout << "Видеокарта отсутствует" << endl;
+		cout << endl;
 	}
 } 
 
@@ -49,6 +50,10 @@ videocard get_comp_videocard(computer comp) {  //ф-ция получения видеокарты
 
 processor get_comp_processor(computer comp) {  //ф-ция получения процессора
 	return comp.processor;
+}
+
+void set_comp_name(computer* comp, string name) {  //ф-ция присвоения имени
+	comp->name = name;
 }
 
 void set_comp_motherboard(computer* comp, motherboard mb) {  //ф-ция присвоения материнской платы

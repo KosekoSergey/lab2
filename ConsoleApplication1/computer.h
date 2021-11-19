@@ -10,7 +10,7 @@ using namespace std;
 #pragma once
 
 struct computer {
-	string name;  //название компьютера
+	string name = "Ѕез названи€";  //название компьютера
 	processor processor;  //процессор
 	ram ram;  //оперативна€ пам€ть
 	videocard videocard;  //видеокарта
@@ -26,6 +26,7 @@ motherboard get_comp_motherboard(computer comp);  //ф-ци€ получени€ материнской 
 ram get_comp_ram(computer comp);  //ф-ци€ получени€ оперативной пам€ти
 videocard get_comp_videocard(computer comp);  //ф-ци€ получени€ видеокарты
 processor get_comp_processor(computer comp);  //ф-ци€ получени€ процессора
+void set_comp_name(computer* comp, string name);  //ф-ци€ присвоени€ имени
 void set_comp_motherboard(computer* comp, motherboard mb);  //ф-ци€ присвоени€ материнской платы
 void set_comp_ram(computer* comp, ram r);  //ф-ци€ присвоени€ оперативной пам€ти
 void set_comp_videocard(computer* comp, videocard v);  //ф-ци€ присвоени€ видеокарты
