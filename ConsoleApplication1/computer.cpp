@@ -1,6 +1,6 @@
 #include "computer.h"
 
-computer init_computer(motherboard mb, processor p, ram r, videocard v, string name) {
+computer init_computer(motherboard mb, processor p, ram r, videocard v, string name) {  //создание компьютера
 	computer comp;
 	comp.state = 0;
 	comp.videocard = v;
@@ -11,16 +11,16 @@ computer init_computer(motherboard mb, processor p, ram r, videocard v, string n
 	return comp;
 }
 
-void turn_on_computer(computer *comp) {
+void turn_on_computer(computer *comp) {  //включить компьютер
 	if (!comp->state) { comp->state = 1; cout << "Компьютер включен" << endl; }
 	else cout << "Компьютер уже включен" << endl;
 }
 
-void turn_off_computer(computer *comp) {
+void turn_off_computer(computer *comp) {  //выключить компьютер
 	if (comp->state) { comp->state = 0; cout << "Компьютер выключен" << endl; }
 }
 
-void check_computer(computer comp) {
+void check_computer(computer comp) {  //проверить и вывести состовляющие компьютера на экран
 	if (comp.state) {
 		cout << "Компьютер: " << comp.name << endl;
 		cout << "Основные компоненты и их характеристики:" << endl;
@@ -34,3 +34,35 @@ void check_computer(computer comp) {
 		else cout << "Видеокарта отсутствует" << endl;
 	}
 } 
+
+motherboard get_comp_motherboard(computer comp) {  //ф-ция получения материнской платы
+	return comp.motherboard;
+}
+
+ram get_comp_ram(computer comp) {  //ф-ция получения оперативной памяти
+	return comp.ram;
+}
+
+videocard get_comp_videocard(computer comp) {  //ф-ция получения видеокарты
+	return comp.videocard;
+}
+
+processor get_comp_processor(computer comp) {  //ф-ция получения процессора
+	return comp.processor;
+}
+
+void set_comp_motherboard(computer* comp, motherboard mb) {  //ф-ция присвоения материнской платы
+	comp->motherboard = mb;
+}
+
+void set_comp_ram(computer* comp, ram r) {  //ф-ция присвоения оперативной памяти
+	comp->ram = r;
+}
+
+void set_comp_videocard(computer* comp, videocard v) {  //ф-ция присвоения видеокарты
+	comp->videocard = v;
+}
+
+void set_comp_processor(computer* comp, processor p) {  //ф-ция присвоения процессора
+	comp->processor = p;
+}
